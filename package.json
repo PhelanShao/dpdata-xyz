@@ -1,0 +1,108 @@
+{
+  "name": "dpdata-xyz",
+  "displayName": "DPData-XYZ",
+  "description": "将NPY文件转换为XYZ/ExtXYZ分子格式的VS Code扩展",
+  "version": "0.1.0",
+  "publisher": "phelanshao",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "icon": "images/icon.svg",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PhelanShao/dpdata-xyz.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PhelanShao/dpdata-xyz/issues"
+  },
+  "homepage": "https://github.com/PhelanShao/dpdata-xyz#readme",
+  "categories": [
+    "Other",
+    "Data Science"
+  ],
+  "keywords": [
+    "xyz",
+    "molecule",
+    "chemistry",
+    "deepmd",
+    "npy",
+    "data-conversion"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "dpdata-xyz.parseNPY",
+        "title": "Parse NPY Files to Text"
+      },
+      {
+        "command": "dpdata-xyz.generateXyzFromNpy",
+        "title": "Generate XYZ/ExtXYZ from NPY"
+      },
+      {
+        "command": "dpdata-xyz.generateXYZ",
+        "title": "Generate XYZ File"
+      },
+      {
+        "command": "dpdata-xyz.generateExtXYZ",
+        "title": "Generate ExtXYZ File"
+      },
+      {
+        "command": "dpdata-xyz.processDirectory",
+        "title": "Process DPData Directory to XYZ"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "dpdata-xyz.processDirectory",
+          "when": "explorerResourceIsFolder",
+          "group": "dpdata"
+        },
+        {
+          "command": "dpdata-xyz.parseNPY",
+          "when": "resourceExtname == .npy",
+          "group": "dpdata"
+        },
+        {
+          "command": "dpdata-xyz.generateXyzFromNpy",
+          "when": "resourceExtname == .npy",
+          "group": "dpdata"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "dependencies": {
+    "three": "^0.162.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.60.0",
+    "@typescript-eslint/eslint-plugin": "^8.25.0",
+    "@typescript-eslint/parser": "^8.25.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "@vscode/vsce": "^3.3.0",
+    "esbuild": "^0.25.0",
+    "eslint": "^9.21.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.7.3"
+  },
+  "license": "MIT"
+}
