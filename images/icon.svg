@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect x="10" y="10" width="108" height="108" rx="10" fill="#2C3E50"/>
+  
+  <!-- XYZ字母 -->
+  <text x="64" y="54" font-family="Arial" font-size="32" font-weight="bold" fill="#3498DB" text-anchor="middle">XYZ</text>
+  
+  <!-- 分子结构表示 -->
+  <circle cx="40" cy="80" r="8" fill="#E74C3C"/>
+  <circle cx="64" cy="80" r="8" fill="#2ECC71"/>
+  <circle cx="88" cy="80" r="8" fill="#F1C40F"/>
+  
+  <!-- 连接线 -->
+  <line x1="40" y1="80" x2="64" y2="80" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="64" y1="80" x2="88" y2="80" stroke="#FFFFFF" stroke-width="2"/>
+  
+  <!-- NPY到XYZ的转换图标 -->
+  <path d="M35,40 L55,40 L55,30 L70,45 L55,60 L55,50 L35,50 Z" fill="#9B59B6" opacity="0.7"/>
+</svg>
