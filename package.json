@@ -3,7 +3,7 @@
   "displayName": "DPData-XYZ",
   "description": "将NPY文件转换为XYZ/ExtXYZ分子格式的VS Code扩展",
   "version": "0.1.0",
-  "publisher": "phelanshao",
+  "publisher": "fulin-shao",
   "engines": {
     "vscode": "^1.60.0"
   },
