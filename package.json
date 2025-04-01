@@ -3,11 +3,11 @@
   "displayName": "DPData-XYZ",
   "description": "将NPY文件转换为XYZ/ExtXYZ分子格式的VS Code扩展",
   "version": "0.1.0",
-  "publisher": "phelanshao",
+  "publisher": "fulinshao",
   "engines": {
     "vscode": "^1.60.0"
   },
-  "icon": "images/icon.svg",
+  "icon": "images/icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/PhelanShao/dpdata-xyz.git"
